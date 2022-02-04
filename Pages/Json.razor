@@ -1,0 +1,54 @@
+﻿@page "/json"
+@inject HttpClient Http
+
+<PageTitle>Blazor - JSON</PageTitle>
+
+<h2>Blazor - JSON</h2>
+
+<br />
+
+@if(person == null)
+{
+    <p>Det finns inga personer.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Kön</th>
+                <th>Ålder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var human in person)
+            {
+                <tr>
+                    <td>@human.name</td>
+                    <td>@human.gender</td>
+                    <td>@human.age</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Person[]? person;
+
+    protected override async Task OnInitializedAsync()
+    {
+        person = await Http.GetFromJsonAsync<Person[]>("/sample-data/person.json");
+    }
+
+    public class Person
+    {
+        public string? name { get; set; }
+
+        public string? gender { get; set; }
+
+        public int? age { get; set; }
+    }
+}
+

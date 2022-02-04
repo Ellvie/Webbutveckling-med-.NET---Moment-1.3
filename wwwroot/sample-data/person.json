@@ -1,0 +1,27 @@
+﻿[
+  {
+    "name": "Kalle",
+    "gender": "Man",
+    "age": 32
+  },
+  {
+    "name": "Anna",
+    "gender": "Kvinna",
+    "age": 54
+  },
+  {
+    "name": "Kevin",
+    "gender": "Annat",
+    "age": 15
+  },
+  {
+    "name": "Berit",
+    "gender": "Kvinna",
+    "age": 19
+  },
+  {
+    "name": "Bert",
+    "gender": "Man",
+    "age": 44
+  }
+]

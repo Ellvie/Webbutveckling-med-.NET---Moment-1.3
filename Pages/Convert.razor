@@ -1,0 +1,73 @@
+﻿@page "/convert"
+
+<PageTitle>Blazor - Konvertering</PageTitle>
+
+
+<h2>Blazor - Konvertering</h2>
+
+<br />
+
+
+<p><b>Konvertera meter till fot:</b></p>
+
+
+  <label for="meter">Meter:</label><br>
+  <input type="number" id="meter" name="meter" @bind="meter" /><br>
+
+  <button @onclick="Meter">Konvertera</button>
+
+
+   <p>@meter meter är @feet fot.</p>
+
+
+
+<br />
+<br />
+<hr />
+<br />
+
+
+<p><b>Konvertera km/h till miles/h:</b></p>
+
+
+  <label for="km">Km/h:</label><br>
+  <input type="number" id="km" name="km" @bind="km" /><br>
+
+  <input type="submit" value="Konvertera" @onclick="Km">
+
+
+
+   <p>@km km/h är @miles miles/h.</p>
+
+
+
+
+
+@code {
+    public double meter;
+
+    public double feet;
+
+
+    public double km;
+
+    public double miles;
+
+
+
+    private void Meter()
+    {
+
+        feet = meter * 3.2808;
+
+        feet = Math.Round(feet, 2);
+
+    }
+
+    private void Km()
+    {
+        miles = km / 1.609344;
+
+        miles = Math.Round(miles, 0);
+    }
+}

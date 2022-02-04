@@ -1,0 +1,12 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Sidan hittades inte</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sidan kunde inte hittas. Försök igen senare.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
